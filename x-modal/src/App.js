@@ -81,6 +81,7 @@ function App() {
         Open Form
       </button>
 
+      {/* Conditionally render the modal */}
       {isModalOpen && (
         <div className="modal" onClick={() => setIsModalOpen(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
