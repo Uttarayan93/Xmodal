@@ -57,6 +57,10 @@ function App() {
     }
   };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div
       style={{
@@ -81,9 +85,9 @@ function App() {
         Open Form
       </button>
 
-      {/* Conditionally render the modal */}
+      {/* Render modal only when isModalOpen is true */}
       {isModalOpen && (
-        <div className="modal" onClick={() => setIsModalOpen(false)}>
+        <div className="modal" onClick={closeModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <h2>Fill Details</h2>
             <form onSubmit={handleSubmit}>
