@@ -1,0 +1,78 @@
+/* App.css */
+
+/* Overall app container */
+.modal {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+/* Center the heading and button at the top */
+.modal > div {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Modal content container */
+.modal-content {
+  position: absolute;
+  top: 150px; /* Adjust this to control how far below the form opens */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Form title */
+.modal-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form fields styling */
+.modal-content form div {
+  margin-bottom: 15px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Error message styling */
+.modal-content p {
+  color: red;
+  font-size: 12px;
+  margin: 5px 0 0 0;
+}
+
+/* Submit button styling */
+.submit-button {
+  background-color: #6687f2;
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #577ad6;
+}
