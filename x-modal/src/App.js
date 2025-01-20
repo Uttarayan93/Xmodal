@@ -58,78 +58,79 @@ function App() {
   };
 
   return (
-    <div className="modal" onClick={() => isModalOpen && setIsModalOpen(false)}>
-      <div
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <h1>User Details Modal</h1>
+      <button
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          backgroundColor: "#6687f2",
+          padding: "12px 20px",
+          color: "white",
+          borderRadius: "5px",
+          border: "none",
+          cursor: "pointer",
+          fontSize: "15px",
         }}
+        onClick={() => setIsModalOpen(true)}
       >
-        <h1>User Details Modal</h1>
-        <button
-          style={{
-            backgroundColor: "#6687f2",
-            padding: "12px 20px",
-            color: "white",
-            borderRadius: "5px",
-            border: "none",
-            cursor: "pointer",
-            fontSize: "15px",
-          }}
-          onClick={() => setIsModalOpen(true)}
-        >
-          Open Form
-        </button>
-      </div>
+        Open Form
+      </button>
+
       {isModalOpen && (
-        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-          <h2>Fill Details</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>Username:</label>
-              <input
-                id="username"
-                type="text"
-                value={formData.username}
-                onChange={handleInputChange}
-              />
-              {errors.username && <p>{errors.username}</p>}
-            </div>
-            <div>
-              <label>Email Address:</label>
-              <input
-                id="email"
-                type="email"
-                value={formData.email}
-                onChange={handleInputChange}
-              />
-              {errors.email && <p>{errors.email}</p>}
-            </div>
-            <div>
-              <label>Phone Number:</label>
-              <input
-                id="phone"
-                type="text"
-                value={formData.phone}
-                onChange={handleInputChange}
-              />
-              {errors.phone && <p>{errors.phone}</p>}
-            </div>
-            <div>
-              <label>Date of Birth:</label>
-              <input
-                id="dob"
-                type="date"
-                value={formData.dob}
-                onChange={handleInputChange}
-              />
-              {errors.dob && <p>{errors.dob}</p>}
-            </div>
-            <button className="submit-button" type="submit">
-              Submit
-            </button>
-          </form>
+        <div className="modal" onClick={() => setIsModalOpen(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <h2>Fill Details</h2>
+            <form onSubmit={handleSubmit}>
+              <div>
+                <label>Username:</label>
+                <input
+                  id="username"
+                  type="text"
+                  value={formData.username}
+                  onChange={handleInputChange}
+                />
+                {errors.username && <p>{errors.username}</p>}
+              </div>
+              <div>
+                <label>Email Address:</label>
+                <input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+                {errors.email && <p>{errors.email}</p>}
+              </div>
+              <div>
+                <label>Phone Number:</label>
+                <input
+                  id="phone"
+                  type="text"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                />
+                {errors.phone && <p>{errors.phone}</p>}
+              </div>
+              <div>
+                <label>Date of Birth:</label>
+                <input
+                  id="dob"
+                  type="date"
+                  value={formData.dob}
+                  onChange={handleInputChange}
+                />
+                {errors.dob && <p>{errors.dob}</p>}
+              </div>
+              <button className="submit-button" type="submit">
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       )}
     </div>
